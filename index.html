@@ -8,133 +8,278 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --bg-color: #050505; --card-bg: #0f0f0f; --accent-gold: #c5a059; --text-main: #ffffff; --text-dim: #a0a0a0; --yankee-blue: #132448; }
+        :root {
+            --bg-color: #050505;
+            --card-bg: #0f0f0f;
+            --accent-gold: #c5a059;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+        }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; scroll-behavior: smooth; }
-        
-        nav { position: fixed; top: 0; width: 100%; background: rgba(5, 5, 5, 0.95); backdrop-filter: blur(10px); display: flex; justify-content: center; padding: 1.2rem; border-bottom: 1px solid #1a1a1a; z-index: 1000; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--accent-gold); font-family: 'Playfair Display', serif; font-size: 1rem; transition: 0.3s; }
-        
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 120px 8% 60px 8%; gap: 40px; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            padding: 1.2rem;
+            border-bottom: 1px solid #1a1a1a;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 120px 8% 60px 8%;
+            gap: 40px;
+        }
+
         .hero-content { flex: 1.2; text-align: left; }
         .hero-image { flex: 0.8; display: flex; justify-content: center; }
-        .profile-pic { width: 100%; max-width: 380px; height: auto; aspect-ratio: 3 / 4; border: 1px solid var(--accent-gold); padding: 12px; object-fit: cover; background: #000; }
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 8vw, 5.5rem); margin-bottom: 25px; letter-spacing: -1px; }
-        .primary-detail { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--accent-gold); margin-bottom: 2px; }
-        .secondary-detail { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text-main); margin-bottom: 15px; font-weight: 300; letter-spacing: 1px; }
+
+        .profile-pic {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            border: 1px solid var(--accent-gold);
+            padding: 12px;
+            object-fit: cover;
+            background: #000;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 8vw, 5.5rem);
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .primary-detail {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--accent-gold);
+            margin-bottom: 2px;
+        }
+
+        .secondary-detail {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
 
         section { padding: 100px 8%; border-bottom: 1px solid #111; }
-        h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--accent-gold); margin-bottom: 50px; text-align: center; }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 50px;
+            text-align: center;
+        }
 
-        /* Experience & Expertise Grids */
+        .motivation-content {
+            max-width: 900px;
+            margin: auto;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
         .exp-grid { display: grid; gap: 30px; }
-        .exp-card { background: var(--card-bg); padding: 40px; border: 1px solid #1a1a1a; }
+        .exp-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border: 1px solid #1a1a1a;
+        }
         .exp-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
         .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; }
         .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
+        
         .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; list-style-type: circle; }
         .exp-bullets li { margin-bottom: 8px; }
 
-        .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
         .icon-item { padding: 20px; }
-        .icon-item .material-symbols-outlined { font-size: 48px; color: var(--accent-gold); margin-bottom: 15px; }
-        .icon-item p { font-family: 'Playfair Display', serif; font-size: 1.15rem; }
+        .icon-item .material-symbols-outlined {
+            font-size: 48px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+        .icon-item p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--text-main);
+        }
 
-        /* POV BASEBALL GAME */
-        .game-card { background: var(--card-bg); border: 2px solid var(--accent-gold); padding: 20px; max-width: 900px; margin: 0 auto; border-radius: 8px; position: relative; }
-        .stadium-view { 
-            position: relative; 
-            height: 450px; 
-            background: linear-gradient(to bottom, #1e3c72 0%, #2a5298 100%); /* Night Sky */
-            overflow: hidden; 
-            border-radius: 4px; 
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            perspective: 1000px;
+        /* Interactive Projects Styles */
+        .project-container { display: flex; flex-direction: column; gap: 50px; }
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 4px;
+            width: 100%;
         }
-        .diamond {
-            position: absolute;
-            bottom: -50px;
-            width: 150%;
+
+        /* Baseball Game Specifics */
+        #game-field {
+            position: relative;
             height: 300px;
-            background: #2d5a27; /* Outfield */
-            transform: rotateX(60deg);
-            border: 5px solid #fff;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+            background: linear-gradient(#1a3a1a, #2d5a27);
+            margin-top: 20px;
+            overflow: hidden;
+            border: 2px solid #333;
+            border-radius: 8px;
         }
-        .pitcher-mound {
+        #ball {
             position: absolute;
-            top: 40%;
-            left: 50%;
-            width: 40px;
-            height: 40px;
-            background: #8b4513;
-            border-radius: 50%;
-            transform: translateX(-50%);
-        }
-        .pitcher-silhouette {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 60px;
-            color: #ccc;
-        }
-        .game-ball {
-            position: absolute;
-            width: 12px;
-            height: 12px;
+            width: 15px;
+            height: 15px;
             background: white;
             border-radius: 50%;
-            top: 35%;
+            top: 20px;
             left: 50%;
-            transform: scale(0.1);
+            transform: translateX(-50%);
             display: none;
-            z-index: 10;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
-        .countdown-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 80px;
-            color: var(--accent-gold);
-            font-family: 'Playfair Display', serif;
-            font-weight: bold;
-            z-index: 20;
-            display: none;
-        }
-        .yankee-bat {
+        #bat {
             position: absolute;
             bottom: 20px;
-            right: 20%;
-            width: 100px;
-            height: 15px;
-            background: linear-gradient(var(--yankee-blue), #fff);
-            transform: rotate(-45deg);
-            transform-origin: left bottom;
-            border-radius: 10px;
-            z-index: 15;
+            left: 50%;
+            width: 70px;
+            height: 12px;
+            background: #8B4513;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            background: #000;
+            padding: 15px;
+            color: var(--accent-gold);
+            font-family: 'Courier New', monospace;
+            border-bottom: 2px solid #333;
+            font-weight: bold;
+        }
+
+        .app-input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .app-input-group label { display: block; margin-bottom: 8px; font-size: 0.75rem; color: var(--accent-gold); letter-spacing: 1px;}
+        .app-input-group input {
+            width: 100%;
+            background: #000;
+            border: 1px solid #333;
+            color: white;
+            padding: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+        .calc-btn {
+            width: 100%;
+            background: var(--accent-gold);
+            color: black;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            transition: 0.3s;
+        }
+        .calc-btn:hover { background: white; }
+
+        /* BIGGER CPA TICKER */
+        .cpa-ticker {
+            background: #0a0a0a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .ticker-label {
+            color: var(--accent-gold);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
             display: block;
         }
-        .swing-anim { animation: swing 0.15s ease-in-out; }
-        @keyframes swing { 0% { transform: rotate(-45deg); } 50% { transform: rotate(45deg); } 100% { transform: rotate(-45deg); } }
+        #cpa-timer {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: white;
+            display: block;
+            text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+        }
 
-        .game-hud { display: flex; justify-content: space-between; padding: 15px; background: #000; color: var(--accent-gold); font-family: 'Courier New', monospace; border-top: 1px solid #333; }
-        .btn-game { flex: 1; padding: 15px; border: none; cursor: pointer; font-weight: bold; font-family: 'Inter'; text-transform: uppercase; transition: 0.3s; }
-        .btn-pitch { background: var(--accent-gold); color: black; }
-        .btn-swing { background: white; color: black; }
+        .btn-group { display: flex; gap: 15px; margin-top: 35px; }
+        .btn {
+            padding: 15px 35px;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            transition: 0.4s;
+            border: 1px solid var(--accent-gold);
+        }
+        .btn-gold { background: var(--accent-gold); color: black; font-weight: bold; }
+        .btn-outline { color: var(--accent-gold); }
 
-        /* CPA TICKER */
-        .cpa-ticker { background: #0a0a0a; padding: 40px 20px; text-align: center; border-top: 1px solid #1a1a1a; }
-        #cpa-timer { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem); color: white; display: block; text-shadow: 0 0 20px rgba(197, 160, 89, 0.4); }
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .footer-socials a {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+        .footer-socials a:hover { color: white; transform: translateY(-3px); }
 
-        footer { text-align: center; padding: 60px 0; border-top: 1px solid #111; }
-        .footer-socials a { color: var(--accent-gold); font-size: 1.8rem; margin: 0 15px; transition: 0.3s; }
-        .footer-socials a:hover { color: white; }
-
-        @media (max-width: 900px) { .hero { flex-direction: column-reverse; text-align: center; } .icon-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 900px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
+            .icon-grid { grid-template-columns: repeat(2, 1fr); }
+            .app-input-group { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -157,9 +302,9 @@
                 <p class="primary-detail" style="margin-top: 25px;">Incoming KPMG Intern</p>
                 <p class="secondary-detail">January 2027</p>
             </div>
-            <div class="btn-group" style="margin-top: 30px; display: flex; gap: 15px;">
-                <a href="https://www.linkedin.com/in/sneha-patel099/" target="_blank" style="background: var(--accent-gold); color: black; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px;">LinkedIn Profile</a>
-                <a href="https://www.linkedin.com/in/sneha-patel099/" target="_blank" style="border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px;">View Resume</a>
+            <div class="btn-group">
+                <a href="https://www.linkedin.com/in/sneha-patel099/" target="_blank" class="btn btn-gold">LinkedIn Profile</a>
+                <a href="https://www.linkedin.com/in/sneha-patel099/" target="_blank" class="btn btn-outline">View Resume</a>
             </div>
         </div>
         <div class="hero-image">
@@ -178,12 +323,60 @@
         <h2>Professional Experience</h2>
         <div class="exp-grid">
             <div class="exp-card">
-                <div class="exp-header"><div class="exp-main"><p class="exp-sub">Audit & Assurance</p><h3>Incoming Audit Intern</h3><p>KPMG | Morristown, NJ</p></div><p class="exp-sub">Jan 2027</p></div>
-                <ul class="exp-bullets"><li>Selected for the Winter 2027 Audit internship program at KPMG.</li><li>Focus on financial integrity and client compliance for global entities through auditing financial statements.</li></ul>
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Audit & Assurance</p>
+                        <h3>Incoming Audit Intern</h3>
+                        <p>KPMG | Morristown, NJ</p>
+                    </div>
+                    <p class="exp-sub">Jan 2027</p>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Selected for the Winter 2027 Audit internship program at KPMG.</li>
+                    <li>Focus on financial integrity and client compliance for global entities through auditing financial statements.</li>
+                </ul>
             </div>
             <div class="exp-card">
-                <div class="exp-header"><div class="exp-main"><p class="exp-sub">Financial Oversight</p><h3>Bookkeeper & Customer Service</h3><p>Shoprite | South Plainfield, NJ</p></div><p class="exp-sub">Jan 2024 - Present</p></div>
-                <ul class="exp-bullets"><li>Audit and reconcile up to $75K in daily sales with 100% precision and accuracy.</li><li>Utilize Oracle and IBM systems to maintain operational integrity and cash control.</li></ul>
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Financial Oversight</p>
+                        <h3>Bookkeeper & Customer Service</h3>
+                        <p>Shoprite | South Plainfield, NJ</p>
+                    </div>
+                    <p class="exp-sub">Jan 2024 - Present</p>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Audit and reconcile up to $75K in daily sales with 100% precision and accuracy.</li>
+                    <li>Utilize Oracle and IBM systems to maintain operational integrity and cash control.</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Mentorship</p>
+                        <h3>Student Ambassador</h3>
+                        <p>NJCPA & CFA Society NY</p>
+                    </div>
+                    <p class="exp-sub">2025 - Present</p>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Promoting the Finance & Accounting profession through peer-to-peer engagement.</li>
+                    <li>Building strategic connections with industry professionals and alumni boards.</li>
+                </ul>
+            </div>
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Leadership</p>
+                        <h3>Business Club President</h3>
+                        <p>Middlesex College, New Jersey</p>
+                    </div>
+                    <p class="exp-sub">2024 - 2025</p>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Increased organizational membership by 30% through targeted recruitment.</li>
+                    <li>Led professional development events and fundraising for over 20 active members.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -191,45 +384,115 @@
     <section id="expertise">
         <h2>Expertise</h2>
         <div class="icon-grid">
-            <div class="icon-item"><span class="material-symbols-outlined">analytics</span><p>Financial Modeling</p></div>
-            <div class="icon-item"><span class="material-symbols-outlined">query_stats</span><p>Financial Analysis</p></div>
-            <div class="icon-item"><span class="material-symbols-outlined">database</span><p>Data Analytics</p></div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">analytics</span>
+                <p>Basic Financial Modeling</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">query_stats</span>
+                <p>Financial Analysis</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">database</span>
+                <p>Data Analytics</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">table_view</span>
+                <p>Microsoft Excel</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">storage</span>
+                <p>Database Management</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">monitoring</span>
+                <p>DCF Valuation</p>
+            </div>
         </div>
     </section>
 
     <section id="projects">
         <h2>Interactive Projects</h2>
-        <div style="display: flex; flex-direction: column; gap: 40px;">
-            <div class="game-card">
-                <h3 style="color: var(--accent-gold); margin-bottom: 10px;">Yankee Stadium POV: Home Run Derby</h3>
-                <div class="game-hud">
+        <div class="project-container">
+            
+            <div class="project-card">
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.8rem;">Liquidity Pulse</h3>
+                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 10px;">
+                    An auditing tool designed to assess solvency. Analysis of current assets and liabilities provides an instant snapshot of financial health.
+                </p>
+                <div class="app-input-group">
+                    <div>
+                        <label>CURRENT ASSETS ($)</label>
+                        <input type="number" id="assets" placeholder="e.g. 500000">
+                    </div>
+                    <div>
+                        <label>CURRENT LIABILITIES ($)</label>
+                        <input type="number" id="liabilities" placeholder="e.g. 250000">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calculateLiquidity()">Analyze Pulse</button>
+                <div id="result-box">
+                    <h4 id="ratio-output" style="font-size: 2.5rem; color: var(--accent-gold); font-family: 'Playfair Display', serif;"></h4>
+                    <p id="verdict" style="font-style: italic; margin-top: 10px; color: var(--text-main);"></p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.8rem;">Home Run Derby</h3>
+                <div class="scoreboard">
                     <span>SCORE: <span id="runs">0</span></span>
                     <span>OUTS: <span id="outs">0</span></span>
-                    <span>INNING: <span id="inning">1</span>/9</span>
+                    <span id="game-msg">PLAY BALL!</span>
                 </div>
-                <div class="stadium-view">
-                    <div class="diamond"></div>
-                    <div class="pitcher-mound"></div>
-                    <span class="material-symbols-outlined pitcher-silhouette">person</span>
-                    <div class="game-ball" id="ball"></div>
-                    <div class="yankee-bat" id="bat"></div>
-                    <div class="countdown-overlay" id="countdown"></div>
+                <div id="game-field">
+                    <div id="ball"></div>
+                    <div id="bat"></div>
                 </div>
-                <div style="display: flex; border-top: 1px solid #333;">
-                    <button class="btn-game btn-pitch" onclick="startPlay()">PITCHER SET (3s)</button>
-                    <button class="btn-game btn-swing" id="swing-btn" onclick="swing()">SWING!</button>
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button class="calc-btn" onclick="pitchBall()">PITCH</button>
+                    <button class="calc-btn" style="background: white;" onclick="swingBat()">SWING!</button>
                 </div>
-                <p id="game-alert" style="text-align: center; margin-top: 10px; color: var(--accent-gold); font-weight: bold;"></p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lifestyle">
+        <h2>Outside the Classroom</h2>
+        <div class="icon-grid">
+            <div class="icon-item">
+                <span class="material-symbols-outlined">fitness_center</span>
+                <p>Strength Training</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">sports_baseball</span>
+                <p>Watching Baseball</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">explore</span>
+                <p>Adventure</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">flight</span>
+                <p>Traveling</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">palette</span>
+                <p>Painting</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">pedal_bike</span>
+                <p>Biking</p>
             </div>
         </div>
     </section>
 
     <div class="cpa-ticker">
-        <span style="color: var(--accent-gold); letter-spacing: 3px; font-size: 0.8rem; text-transform: uppercase;">CPA Study Starts In</span>
+        <span class="ticker-label">CPA Candidacy Study Starts In</span>
         <span id="cpa-timer"></span>
     </div>
 
-    <footer>
+    <footer style="text-align: center; padding: 60px 0;">
         <p style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem;">SNEHA PATEL</p>
         <div class="footer-socials">
             <a href="https://www.linkedin.com/in/sneha-patel099/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -239,83 +502,58 @@
     </footer>
 
     <script>
-        let score = 0; let outs = 0; let inning = 1; let ballActive = false; let ballTime = 0; let pitchSpeed = 1500;
+        function calculateLiquidity() {
+            const assets = document.getElementById('assets').value;
+            const liabs = document.getElementById('liabilities').value;
+            const resultBox = document.getElementById('result-box');
+            if(assets && liabs && liabs != 0) {
+                const ratio = (assets / liabs).toFixed(2);
+                resultBox.style.display = 'block';
+                document.getElementById('ratio-output').innerText = ratio + " : 1";
+                let message = ratio >= 2 ? "Strong Liquidity" : ratio >= 1.2 ? "Stable" : "Risk Warning";
+                document.getElementById('verdict').innerText = message;
+            }
+        }
+
+        let runs = 0; let outs = 0; let ballInFlight = false; let ballPos = 0; let pitchInterval;
         const ball = document.getElementById('ball');
-        const bat = document.getElementById('bat');
-        const countdownEl = document.getElementById('countdown');
-        const alertEl = document.getElementById('game-alert');
+        const msg = document.getElementById('game-msg');
 
-        function startPlay() {
-            if(ballActive) return;
-            let count = 3;
-            countdownEl.style.display = 'block';
-            alertEl.innerText = "";
-            
-            const timer = setInterval(() => {
-                countdownEl.innerText = count;
-                count--;
-                if(count < 0) {
-                    clearInterval(timer);
-                    countdownEl.style.display = 'none';
-                    pitch();
-                }
-            }, 800);
-        }
-
-        function pitch() {
-            ballActive = true;
+        function pitchBall() {
+            if(ballInFlight) return;
+            ballInFlight = true;
+            ballPos = 0;
             ball.style.display = 'block';
-            ball.style.top = '35%';
-            ball.style.left = '50%';
-            ball.style.transform = 'scale(0.1)';
-            
-            // Ball comes toward the plate
-            ball.animate([
-                { top: '35%', left: '50%', transform: 'scale(0.1)' },
-                { top: '85%', left: '48%', transform: 'scale(4)' }
-            ], { duration: pitchSpeed, fill: 'forwards' });
-
-            ballTime = Date.now();
-
-            setTimeout(() => {
-                if(ballActive) {
-                    ballActive = false;
+            msg.innerText = "HERE COMES THE PITCH...";
+            pitchInterval = setInterval(() => {
+                ballPos += 6;
+                ball.style.top = ballPos + 'px';
+                if(ballPos > 300) {
+                    clearInterval(pitchInterval);
+                    ballInFlight = false;
                     ball.style.display = 'none';
-                    processResult("STRIKE / OUT");
+                    outs++;
+                    document.getElementById('outs').innerText = outs;
+                    msg.innerText = "STRIKE! OUT.";
                 }
-            }, pitchSpeed + 100);
+            }, 16);
         }
 
-        function swing() {
-            bat.classList.add('swing-anim');
-            setTimeout(() => bat.classList.remove('swing-anim'), 150);
-
-            if(!ballActive) return;
-            const diff = Date.now() - ballTime;
-            ballActive = false;
-            ball.style.display = 'none';
-
-            // Timing logic for hits
-            if(diff > (pitchSpeed * 0.8) && diff < (pitchSpeed * 0.95)) {
-                score++;
-                processResult("HOME RUN! IN THE SEATS!");
-            } else if (diff > (pitchSpeed * 0.7) && diff < pitchSpeed) {
-                processResult("BASE HIT! AT FIRST.");
+        function swingBat() {
+            if(!ballInFlight) return;
+            clearInterval(pitchInterval);
+            ballInFlight = false;
+            // Strike zone is between 230 and 280
+            if(ballPos >= 235 && ballPos <= 275) {
+                runs++;
+                document.getElementById('runs').innerText = runs;
+                msg.innerText = "HOME RUN! GO SNEHA!";
             } else {
-                processResult("FOUL / OUT");
+                outs++;
+                document.getElementById('outs').innerText = outs;
+                msg.innerText = "FOUL BALL / OUT!";
             }
-        }
-
-        function processResult(msg) {
-            alertEl.innerText = msg;
-            if(msg.includes("OUT")) outs++;
-            if(outs >= 3) {
-                outs = 0; inning++;
-                if(inning > 9) { alertEl.innerText = "GAME OVER! SCORE: " + score; score = 0; inning = 1; }
-            }
-            document.getElementById('runs').innerText = score;
-            document.getElementById('outs').innerText = outs;
-            document.getElementById('inning').innerText = inning;
+            ball.style.display = 'none';
         }
 
         function updateCountdown() {
@@ -329,6 +567,7 @@
             document.getElementById("cpa-timer").innerText = `${days}D : ${hours}H : ${mins}M : ${secs}S`;
         }
         setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
