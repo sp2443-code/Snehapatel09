@@ -24,7 +24,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0; width: 100%;
@@ -46,7 +45,6 @@
             transition: 0.3s;
         }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -77,24 +75,22 @@
             letter-spacing: -1px;
         }
 
-        /* Requested Typography - Slightly Smaller */
         .primary-detail {
             font-family: 'Playfair Display', serif;
-            font-size: 1.9rem; /* Reduced by 2 points */
+            font-size: 1.9rem;
             color: var(--accent-gold);
             margin-bottom: 2px;
         }
 
         .secondary-detail {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem; /* Reduced by 2 points */
+            font-size: 1rem;
             color: var(--text-main);
             margin-bottom: 15px;
             font-weight: 300;
             letter-spacing: 1px;
         }
 
-        /* Sections */
         section { padding: 100px 8%; border-bottom: 1px solid #111; }
         h2 {
             font-family: 'Playfair Display', serif;
@@ -104,7 +100,6 @@
             text-align: center;
         }
 
-        /* Motivation Text */
         .motivation-content {
             max-width: 900px;
             margin: auto;
@@ -115,29 +110,27 @@
             text-align: center;
         }
 
-        /* Experience Cards */
         .exp-grid { display: grid; gap: 30px; }
         .exp-card {
             background: var(--card-bg);
             padding: 40px;
             border: 1px solid #1a1a1a;
         }
-        .exp-card:hover { border-color: var(--accent-gold); }
         .exp-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
         .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; }
         .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
         
-        .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; }
-        .exp-bullets li { margin-bottom: 8px; }
+        .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; list-style-type: square; }
+        .exp-bullets li { margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-        /* Expertise Grid */
+        /* Modified Expertise Grid for 3x3 layout */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
         .skill-item {
-            padding: 20px;
+            padding: 25px;
             border: 1px solid #1a1a1a;
             text-align: center;
             font-family: 'Playfair Display', serif;
@@ -145,7 +138,6 @@
             color: var(--accent-gold);
         }
 
-        /* Buttons */
         .btn-group { display: flex; gap: 15px; margin-top: 35px; }
         .btn {
             padding: 15px 35px;
@@ -161,6 +153,8 @@
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
             .exp-header { flex-direction: column; gap: 5px; }
             .btn-group { justify-content: center; }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .exp-bullets li { white-space: normal; }
         }
     </style>
 </head>
@@ -208,14 +202,13 @@
                     <div class="exp-main">
                         <p class="exp-sub">Audit & Assurance</p>
                         <h3>Incoming Audit Intern</h3>
-                        <p>KPMG | New York/New Jersey</p>
+                        <p>KPMG | Morristown, NJ</p>
                     </div>
                     <p class="exp-sub">Jan 2027</p>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Selected for the Winter 2027 Audit internship program.</li>
-                    <li>Focused on assessing business processes and identifying potential risks through financial statement analysis.</li>
-                    <li>Utilizing a structured learning environment to build a foundation for CPA licensure.</li>
+                    <li>Selected for the Winter 2027 Audit internship program at a Big Four firm.</li>
+                    <li>Utilizing a high-performance mindset to assess risk and build financial trust.</li>
                 </ul>
             </div>
 
@@ -229,9 +222,8 @@
                     <p class="exp-sub">Jan 2024 - Present</p>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Audit and reconcile up to $75K in daily sales with 100% accuracy.</li>
-                    <li>Investigate cash variances using Oracle and IBM systems to maintain operational integrity.</li>
-                    <li>Manage front-end associates to ensure 95%+ operational efficiency.</li>
+                    <li>Audit and reconcile up to $75K in daily sales with 100% precision and accuracy.</li>
+                    <li>Utilize Oracle and IBM systems to maintain operational integrity and cash control.</li>
                 </ul>
             </div>
 
@@ -245,8 +237,8 @@
                     <p class="exp-sub">2025 - Present</p>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Promoting the Finance & Accounting profession to peers and prospective students.</li>
-                    <li>Engaging with board members and alumni to enrich insights into financial data analysis.</li>
+                    <li>Promoting the Finance & Accounting profession through peer-to-peer engagement.</li>
+                    <li>Building strategic connections with industry professionals and alumni boards.</li>
                 </ul>
             </div>
 
@@ -255,13 +247,13 @@
                     <div class="exp-main">
                         <p class="exp-sub">Leadership</p>
                         <h3>Business Club President</h3>
-                        <p>Middlesex College</p>
+                        <p>Middlesex College, New Jersey</p>
                     </div>
                     <p class="exp-sub">2024 - 2025</p>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Increased membership by 30% and hosted 10+ professional development events.</li>
-                    <li>Led fundraising campaigns and recruitment for 20+ members.</li>
+                    <li>Increased organizational membership by 30% through targeted recruitment.</li>
+                    <li>Led professional development events and fundraising for over 20 active members.</li>
                 </ul>
             </div>
         </div>
