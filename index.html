@@ -77,17 +77,17 @@
             letter-spacing: -1px;
         }
 
-        /* Requested Typography */
+        /* Requested Typography - Slightly Smaller */
         .primary-detail {
             font-family: 'Playfair Display', serif;
-            font-size: 2.1rem; /* Slightly bigger */
+            font-size: 1.9rem; /* Reduced by 2 points */
             color: var(--accent-gold);
             margin-bottom: 2px;
         }
 
         .secondary-detail {
             font-family: 'Inter', sans-serif;
-            font-size: 1.1rem; /* Original size */
+            font-size: 1rem; /* Reduced by 2 points */
             color: var(--text-main);
             margin-bottom: 15px;
             font-weight: 300;
@@ -116,17 +116,19 @@
         }
 
         /* Experience Cards */
-        .exp-grid { display: grid; gap: 25px; }
+        .exp-grid { display: grid; gap: 30px; }
         .exp-card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 40px;
             border: 1px solid #1a1a1a;
-            display: flex;
-            justify-content: space-between;
         }
         .exp-card:hover { border-color: var(--accent-gold); }
-        .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem; }
+        .exp-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; }
         .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
+        
+        .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; }
+        .exp-bullets li { margin-bottom: 8px; }
 
         /* Expertise Grid */
         .skills-grid {
@@ -139,7 +141,7 @@
             border: 1px solid #1a1a1a;
             text-align: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem; /* Slightly bigger */
+            font-size: 1.4rem;
             color: var(--accent-gold);
         }
 
@@ -157,7 +159,7 @@
 
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
-            .exp-card { flex-direction: column; gap: 10px; }
+            .exp-header { flex-direction: column; gap: 5px; }
             .btn-group { justify-content: center; }
         }
     </style>
@@ -193,38 +195,74 @@
     <section id="motivation">
         <h2>Motivation</h2>
         <div class="motivation-content">
-            <p>My approach to business is rooted in the discipline of a competitive athlete—a background where perseverance and resilience were daily requirements. Managing a full-time academic schedule at Rutgers while maintaining professional responsibilities as a bookkeeper has forged a high-performance mindset and a capacity to thrive under pressure.</p>
-            <br>
-            <p>I chose Audit because it provides the unique opportunity to assess business processes and mitigate risk through deep financial analysis. From the moment I studied liquidity ratios, I was fascinated by how the three financial statements act as a pulse for a company’s health. I am particularly inspired by how firms like KPMG are integrating Power BI and Alteryx into their workflow, and I am eager to contribute to that culture of innovation while building my foundation as a future CPA.</p>
+            <p>My motivation for pursuing accounting is rooted in a disciplined, high-performance mindset developed through years of balancing athletics, academics, and professional responsibilities. I am drawn to accounting for its ability to assess financial health, identify risk, and support informed decision-making through accurate financial reporting. I am particularly motivated by the responsibility auditors have in building trust—ensuring that financial information is accurate, reliable, and meaningful. I aim to contribute to this by helping businesses strengthen their financial foundations, make informed decisions, and achieve sustainable growth.</p>
         </div>
     </section>
 
     <section id="experience">
         <h2>Professional Experience</h2>
         <div class="exp-grid">
+            
             <div class="exp-card">
-                <div class="exp-main">
-                    <p class="exp-sub">Audit & Compliance</p>
-                    <h3>Bookkeeper</h3>
-                    <p>Shoprite | South Plainfield</p>
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Audit & Assurance</p>
+                        <h3>Incoming Audit Intern</h3>
+                        <p>KPMG | New York/New Jersey</p>
+                    </div>
+                    <p class="exp-sub">Jan 2027</p>
                 </div>
-                <p class="exp-sub">2024 - Present</p>
+                <ul class="exp-bullets">
+                    <li>Selected for the Winter 2027 Audit internship program.</li>
+                    <li>Focused on assessing business processes and identifying potential risks through financial statement analysis.</li>
+                    <li>Utilizing a structured learning environment to build a foundation for CPA licensure.</li>
+                </ul>
             </div>
+
             <div class="exp-card">
-                <div class="exp-main">
-                    <p class="exp-sub">Leadership</p>
-                    <h3>Business Club President</h3>
-                    <p>Middlesex College</p>
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Financial Oversight</p>
+                        <h3>Bookkeeper & Customer Service</h3>
+                        <p>Shoprite | South Plainfield, NJ</p>
+                    </div>
+                    <p class="exp-sub">Jan 2024 - Present</p>
                 </div>
-                <p class="exp-sub">2024 - 2025</p>
+                <ul class="exp-bullets">
+                    <li>Audit and reconcile up to $75K in daily sales with 100% accuracy.</li>
+                    <li>Investigate cash variances using Oracle and IBM systems to maintain operational integrity.</li>
+                    <li>Manage front-end associates to ensure 95%+ operational efficiency.</li>
+                </ul>
             </div>
+
             <div class="exp-card">
-                <div class="exp-main">
-                    <p class="exp-sub">Mentorship</p>
-                    <h3>Student Ambassador</h3>
-                    <p>NJCPA & CFA Society NY</p>
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Mentorship</p>
+                        <h3>Student Ambassador</h3>
+                        <p>NJCPA & CFA Society NY</p>
+                    </div>
+                    <p class="exp-sub">2025 - Present</p>
                 </div>
-                <p class="exp-sub">2025 - Present</p>
+                <ul class="exp-bullets">
+                    <li>Promoting the Finance & Accounting profession to peers and prospective students.</li>
+                    <li>Engaging with board members and alumni to enrich insights into financial data analysis.</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div class="exp-main">
+                        <p class="exp-sub">Leadership</p>
+                        <h3>Business Club President</h3>
+                        <p>Middlesex College</p>
+                    </div>
+                    <p class="exp-sub">2024 - 2025</p>
+                </div>
+                <ul class="exp-bullets">
+                    <li>Increased membership by 30% and hosted 10+ professional development events.</li>
+                    <li>Led fundraising campaigns and recruitment for 20+ members.</li>
+                </ul>
             </div>
         </div>
     </section>
