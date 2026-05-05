@@ -6,6 +6,7 @@
     <title>Sneha Patel | Rutgers Business School</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #050505;
@@ -121,42 +122,27 @@
         .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; }
         .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
         
-        /* Restored Bullets with Circles */
         .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; list-style-type: circle; }
         .exp-bullets li { margin-bottom: 8px; }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        .skill-item {
-            padding: 25px;
-            border: 1px solid #1a1a1a;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--accent-gold);
-        }
-
-        /* Outside of Classroom Styles */
-        .interest-grid {
+        /* Unified Icon Grid for Expertise and Lifestyle */
+        .icon-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             text-align: center;
         }
-        .interest-item {
+        .icon-item {
             padding: 20px;
         }
-        .interest-item .material-symbols-outlined {
+        .icon-item .material-symbols-outlined {
             font-size: 48px;
             color: var(--accent-gold);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
-        .interest-item p {
+        .icon-item p {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-main);
         }
 
@@ -171,10 +157,23 @@
         .btn-gold { background: var(--accent-gold); color: black; font-weight: bold; }
         .btn-outline { color: var(--accent-gold); }
 
+        /* Footer Socials */
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .footer-socials a {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+        .footer-socials a:hover { color: white; transform: translateY(-3px); }
+
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
-            .interest-grid { grid-template-columns: repeat(2, 1fr); }
-            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .icon-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -198,7 +197,7 @@
                 <p class="secondary-detail">January 2027</p>
             </div>
             <div class="btn-group">
-                <a href="https://www.linkedin.com/in/YOUR-PROFILE" class="btn btn-gold">LinkedIn Profile</a>
+                <a href="#" class="btn btn-gold">LinkedIn Profile</a>
                 <a href="#" class="btn btn-outline">View Resume</a>
             </div>
         </div>
@@ -217,7 +216,6 @@
     <section id="experience">
         <h2>Professional Experience</h2>
         <div class="exp-grid">
-            
             <div class="exp-card">
                 <div class="exp-header">
                     <div class="exp-main">
@@ -232,7 +230,6 @@
                     <li>Focus on financial integrity and client compliance for global entities through auditing financial statements.</li>
                 </ul>
             </div>
-
             <div class="exp-card">
                 <div class="exp-header">
                     <div class="exp-main">
@@ -247,7 +244,6 @@
                     <li>Utilize Oracle and IBM systems to maintain operational integrity and cash control.</li>
                 </ul>
             </div>
-
             <div class="exp-card">
                 <div class="exp-header">
                     <div class="exp-main">
@@ -262,7 +258,6 @@
                     <li>Building strategic connections with industry professionals and alumni boards.</li>
                 </ul>
             </div>
-
             <div class="exp-card">
                 <div class="exp-header">
                     <div class="exp-main">
@@ -282,40 +277,58 @@
 
     <section id="expertise">
         <h2>Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-item">Basic Financial Modeling</div>
-            <div class="skill-item">Financial Analysis</div>
-            <div class="skill-item">Data Analytics</div>
-            <div class="skill-item">Microsoft Excel</div>
-            <div class="skill-item">Database Management</div>
-            <div class="skill-item">DCF Valuation</div>
+        <div class="icon-grid">
+            <div class="icon-item">
+                <span class="material-symbols-outlined">analytics</span>
+                <p>Basic Financial Modeling</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">query_stats</span>
+                <p>Financial Analysis</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">database</span>
+                <p>Data Analytics</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">table_view</span>
+                <p>Microsoft Excel</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">storage</span>
+                <p>Database Management</p>
+            </div>
+            <div class="icon-item">
+                <span class="material-symbols-outlined">monitoring</span>
+                <p>DCF Valuation</p>
+            </div>
         </div>
     </section>
 
     <section id="lifestyle">
         <h2>Outside the Classroom</h2>
-        <div class="interest-grid">
-            <div class="interest-item">
+        <div class="icon-grid">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">fitness_center</span>
                 <p>Strength Training</p>
             </div>
-            <div class="interest-item">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">sports_baseball</span>
                 <p>Watching Baseball</p>
             </div>
-            <div class="interest-item">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">explore</span>
                 <p>Adventure</p>
             </div>
-            <div class="interest-item">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">flight</span>
                 <p>Traveling</p>
             </div>
-            <div class="interest-item">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">palette</span>
                 <p>Painting</p>
             </div>
-            <div class="interest-item">
+            <div class="icon-item">
                 <span class="material-symbols-outlined">pedal_bike</span>
                 <p>Biking</p>
             </div>
@@ -324,7 +337,11 @@
 
     <footer style="text-align: center; padding: 60px 0;">
         <p style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem;">SNEHA PATEL</p>
-        <p style="color: #444; font-size: 0.8rem; margin-top: 10px;">Future CPA Candidate | Rutgers '28</p>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your-email@rutgers.edu"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="color: #444; font-size: 0.8rem; margin-top: 20px;">Future CPA Candidate | Rutgers '28</p>
     </footer>
 
 </body>
