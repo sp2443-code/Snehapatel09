@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sneha Patel | Finance & Accounting</title>
+    <title>Sneha Patel | Rutgers Business School</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -46,8 +46,6 @@
             transition: 0.3s;
         }
 
-        nav a:hover { color: white; }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -69,7 +67,7 @@
             border: 1px solid var(--accent-gold);
             padding: 12px;
             object-fit: cover;
-            filter: grayscale(20%);
+            background: #000;
         }
 
         h1 {
@@ -79,26 +77,25 @@
             letter-spacing: -1px;
         }
 
-        /* Typography requested for Hero */
+        /* Requested Typography */
         .primary-detail {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem; /* Slightly bigger as requested */
+            font-size: 2.1rem; /* Slightly bigger */
             color: var(--accent-gold);
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .secondary-detail {
             font-family: 'Inter', sans-serif;
-            font-size: 1.1rem; /* Keeping original size for finance/date */
+            font-size: 1.1rem; /* Original size */
             color: var(--text-main);
             margin-bottom: 15px;
             font-weight: 300;
             letter-spacing: 1px;
         }
 
-        /* Section Styling */
+        /* Sections */
         section { padding: 100px 8%; border-bottom: 1px solid #111; }
-        
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
@@ -107,58 +104,53 @@
             text-align: center;
         }
 
-        /* Motivation Styling */
+        /* Motivation Text */
         .motivation-content {
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            line-height: 1.8;
-            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.9;
             color: var(--text-dim);
-            position: relative;
+            text-align: center;
         }
 
         /* Experience Cards */
-        .exp-grid { display: grid; gap: 30px; }
+        .exp-grid { display: grid; gap: 25px; }
         .exp-card {
             background: var(--card-bg);
-            padding: 35px;
+            padding: 30px;
             border: 1px solid #1a1a1a;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
         }
         .exp-card:hover { border-color: var(--accent-gold); }
-        .exp-main h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--accent-gold); }
-        .exp-sub { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem; }
+        .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
 
-        /* Skills Grid */
+        /* Expertise Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
         .skill-item {
-            padding: 25px;
+            padding: 20px;
             border: 1px solid #1a1a1a;
             text-align: center;
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem; /* Slightly bigger as requested */
+            font-size: 1.4rem; /* Slightly bigger */
             color: var(--accent-gold);
-            transition: 0.3s;
         }
-        .skill-item:hover { background: var(--accent-gold); color: black; }
 
         /* Buttons */
-        .btn-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-group { display: flex; gap: 15px; margin-top: 35px; }
         .btn {
-            padding: 14px 30px;
+            padding: 15px 35px;
             text-decoration: none;
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            border: 1px solid var(--accent-gold);
             transition: 0.4s;
+            border: 1px solid var(--accent-gold);
         }
         .btn-gold { background: var(--accent-gold); color: black; font-weight: bold; }
         .btn-outline { color: var(--accent-gold); }
@@ -182,21 +174,17 @@
     <header class="hero" id="home">
         <div class="hero-content">
             <h1>Sneha Patel</h1>
-            
             <div class="hero-details">
                 <p class="primary-detail">Rutgers Business School</p>
                 <p class="secondary-detail">Finance & Accounting</p>
-                
                 <p class="primary-detail" style="margin-top: 25px;">Incoming KPMG Intern</p>
                 <p class="secondary-detail">January 2027</p>
             </div>
-
             <div class="btn-group">
                 <a href="https://www.linkedin.com/in/YOUR-PROFILE" class="btn btn-gold">LinkedIn Profile</a>
-                <a href="#" class="btn btn-outline">View Resume PDF</a>
+                <a href="#" class="btn btn-outline">View Resume</a>
             </div>
         </div>
-
         <div class="hero-image">
             <img src="profile.jpg" alt="Sneha Patel" class="profile-pic">
         </div>
@@ -205,7 +193,9 @@
     <section id="motivation">
         <h2>Motivation</h2>
         <div class="motivation-content">
-            "My foundation is built on the discipline of a competitive athlete. Growing up in an environment where perseverance was a daily requirement, I developed a high-performance mindset that I now apply to the financial world. Managing a full-time academic schedule at Rutgers, a part-time role as a Bookkeeper, and the rigors of college athletics taught me to thrive under pressure. I chose Accounting because it reflects that same resilience—demanding precision, integrity, and the stamina to solve complex problems in high-stakes environments."
+            <p>My approach to business is rooted in the discipline of a competitive athlete—a background where perseverance and resilience were daily requirements. Managing a full-time academic schedule at Rutgers while maintaining professional responsibilities as a bookkeeper has forged a high-performance mindset and a capacity to thrive under pressure.</p>
+            <br>
+            <p>I chose Audit because it provides the unique opportunity to assess business processes and mitigate risk through deep financial analysis. From the moment I studied liquidity ratios, I was fascinated by how the three financial statements act as a pulse for a company’s health. I am particularly inspired by how firms like KPMG are integrating Power BI and Alteryx into their workflow, and I am eager to contribute to that culture of innovation while building my foundation as a future CPA.</p>
         </div>
     </section>
 
@@ -214,13 +204,12 @@
         <div class="exp-grid">
             <div class="exp-card">
                 <div class="exp-main">
-                    <p class="exp-sub">Financial Oversight</p>
-                    <h3>Bookkeeper & Customer Service</h3>
-                    <p>Shoprite | South Plainfield, NJ</p>
+                    <p class="exp-sub">Audit & Compliance</p>
+                    <h3>Bookkeeper</h3>
+                    <p>Shoprite | South Plainfield</p>
                 </div>
-                <p class="exp-sub">Jan 2024 - Present</p>
+                <p class="exp-sub">2024 - Present</p>
             </div>
-
             <div class="exp-card">
                 <div class="exp-main">
                     <p class="exp-sub">Leadership</p>
@@ -229,12 +218,11 @@
                 </div>
                 <p class="exp-sub">2024 - 2025</p>
             </div>
-
             <div class="exp-card">
                 <div class="exp-main">
-                    <p class="exp-sub">Ambassadorship</p>
+                    <p class="exp-sub">Mentorship</p>
                     <h3>Student Ambassador</h3>
-                    <p>NJ Society of CPAs & CFA Society NY</p>
+                    <p>NJCPA & CFA Society NY</p>
                 </div>
                 <p class="exp-sub">2025 - Present</p>
             </div>
@@ -253,9 +241,9 @@
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 80px 0; background: #000;">
-        <p style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem; letter-spacing: 2px;">SNEHA PATEL</p>
-        <p style="color: #333; font-size: 0.8rem; margin-top: 15px;">&copy; 2024 | Finance & Accounting Portfolio</p>
+    <footer style="text-align: center; padding: 60px 0;">
+        <p style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.5rem;">SNEHA PATEL</p>
+        <p style="color: #444; font-size: 0.8rem; margin-top: 10px;">Future CPA Candidate | Rutgers '28</p>
     </footer>
 
 </body>
