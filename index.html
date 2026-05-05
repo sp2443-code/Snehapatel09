@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sneha Patel | Rutgers Business School</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
         :root {
             --bg-color: #050505;
@@ -120,10 +121,10 @@
         .exp-main h3 { font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.6rem; }
         .exp-sub { font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; }
         
-        .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; list-style-type: square; }
-        .exp-bullets li { margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* Restored Bullets with Circles */
+        .exp-bullets { margin-top: 15px; padding-left: 20px; color: var(--text-dim); font-size: 0.95rem; list-style-type: circle; }
+        .exp-bullets li { margin-bottom: 8px; }
 
-        /* Modified Expertise Grid for 3x3 layout */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -136,6 +137,27 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             color: var(--accent-gold);
+        }
+
+        /* Outside of Classroom Styles */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        .interest-item {
+            padding: 20px;
+        }
+        .interest-item .material-symbols-outlined {
+            font-size: 48px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+        .interest-item p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-main);
         }
 
         .btn-group { display: flex; gap: 15px; margin-top: 35px; }
@@ -151,10 +173,8 @@
 
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
-            .exp-header { flex-direction: column; gap: 5px; }
-            .btn-group { justify-content: center; }
+            .interest-grid { grid-template-columns: repeat(2, 1fr); }
             .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .exp-bullets li { white-space: normal; }
         }
     </style>
 </head>
@@ -165,6 +185,7 @@
         <a href="#motivation">Motivation</a>
         <a href="#experience">Experience</a>
         <a href="#expertise">Expertise</a>
+        <a href="#lifestyle">Lifestyle</a>
     </nav>
 
     <header class="hero" id="home">
@@ -207,8 +228,8 @@
                     <p class="exp-sub">Jan 2027</p>
                 </div>
                 <ul class="exp-bullets">
-                    <li>Selected for the Winter 2027 Audit internship program at a Big Four firm.</li>
-                    <li>Utilizing a high-performance mindset to assess risk and build financial trust.</li>
+                    <li>Selected for the Winter 2027 Audit internship program at KPMG.</li>
+                    <li>Focus on financial integrity and client compliance for global entities through auditing financial statements.</li>
                 </ul>
             </div>
 
@@ -268,6 +289,36 @@
             <div class="skill-item">Microsoft Excel</div>
             <div class="skill-item">Database Management</div>
             <div class="skill-item">DCF Valuation</div>
+        </div>
+    </section>
+
+    <section id="lifestyle">
+        <h2>Outside the Classroom</h2>
+        <div class="interest-grid">
+            <div class="interest-item">
+                <span class="material-symbols-outlined">fitness_center</span>
+                <p>Strength Training</p>
+            </div>
+            <div class="interest-item">
+                <span class="material-symbols-outlined">sports_baseball</span>
+                <p>Watching Baseball</p>
+            </div>
+            <div class="interest-item">
+                <span class="material-symbols-outlined">explore</span>
+                <p>Adventure</p>
+            </div>
+            <div class="interest-item">
+                <span class="material-symbols-outlined">flight</span>
+                <p>Traveling</p>
+            </div>
+            <div class="interest-item">
+                <span class="material-symbols-outlined">palette</span>
+                <p>Painting</p>
+            </div>
+            <div class="interest-item">
+                <span class="material-symbols-outlined">pedal_bike</span>
+                <p>Biking</p>
+            </div>
         </div>
     </section>
 
