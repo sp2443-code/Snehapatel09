@@ -48,7 +48,7 @@
         }
 
         .hero {
-            min-height: 100 vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -159,7 +159,7 @@
         #game-field {
             position: relative;
             height: 300px;
-            background: #1a3a1a; /* Green grass */
+            background: linear-gradient(#1a3a1a, #2d5a27);
             margin-top: 20px;
             overflow: hidden;
             border: 2px solid #333;
@@ -175,28 +175,29 @@
             left: 50%;
             transform: translateX(-50%);
             display: none;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
         #bat {
             position: absolute;
             bottom: 20px;
             left: 50%;
-            width: 60px;
-            height: 10px;
-            background: #8B4513; /* Wood brown */
+            width: 70px;
+            height: 12px;
+            background: #8B4513;
             transform: translateX(-50%);
-            transition: transform 0.1s;
+            border-radius: 4px;
         }
         .scoreboard {
             display: flex;
             justify-content: space-around;
             background: #000;
-            padding: 10px;
+            padding: 15px;
             color: var(--accent-gold);
             font-family: 'Courier New', monospace;
             border-bottom: 2px solid #333;
+            font-weight: bold;
         }
 
-        /* Liquidity Pulse Inputs */
         .app-input-group {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -224,23 +225,30 @@
             transition: 0.3s;
         }
         .calc-btn:hover { background: white; }
-        #result-box {
-            margin-top: 30px;
-            padding: 20px;
-            border-top: 1px dashed #333;
-            text-align: center;
-            display: none;
-        }
 
+        /* BIGGER CPA TICKER */
         .cpa-ticker {
-            background: #111;
-            padding: 15px;
-            font-size: 0.9rem;
-            color: var(--accent-gold);
+            background: #0a0a0a;
+            padding: 40px 20px;
             text-align: center;
-            letter-spacing: 2px;
-            font-family: 'Playfair Display', serif;
             border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .ticker-label {
+            color: var(--accent-gold);
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        #cpa-timer {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: white;
+            display: block;
+            text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
         }
 
         .btn-group { display: flex; gap: 15px; margin-top: 35px; }
@@ -431,9 +439,6 @@
 
             <div class="project-card">
                 <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.8rem;">Home Run Derby</h3>
-                <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 10px;">
-                    Test your timing. Swing when the ball hits the strike zone to score a Home Run!
-                </p>
                 <div class="scoreboard">
                     <span>SCORE: <span id="runs">0</span></span>
                     <span>OUTS: <span id="outs">0</span></span>
@@ -483,7 +488,8 @@
     </section>
 
     <div class="cpa-ticker">
-        CPA CANDIDACY STUDY STARTS IN: <span id="cpa-timer" style="font-weight: bold; color: white;"></span>
+        <span class="ticker-label">CPA Candidacy Study Starts In</span>
+        <span id="cpa-timer"></span>
     </div>
 
     <footer style="text-align: center; padding: 60px 0;">
@@ -496,7 +502,6 @@
     </footer>
 
     <script>
-        // LIQUIDITY APP
         function calculateLiquidity() {
             const assets = document.getElementById('assets').value;
             const liabs = document.getElementById('liabilities').value;
@@ -505,12 +510,11 @@
                 const ratio = (assets / liabs).toFixed(2);
                 resultBox.style.display = 'block';
                 document.getElementById('ratio-output').innerText = ratio + " : 1";
-                let message = ratio >= 2 ? "Strong Liquidity" : ratio >= 1 ? "Stable" : "Risk Warning";
+                let message = ratio >= 2 ? "Strong Liquidity" : ratio >= 1.2 ? "Stable" : "Risk Warning";
                 document.getElementById('verdict').innerText = message;
             }
         }
 
-        // BASEBALL APP LOGIC
         let runs = 0; let outs = 0; let ballInFlight = false; let ballPos = 0; let pitchInterval;
         const ball = document.getElementById('ball');
         const msg = document.getElementById('game-msg');
@@ -522,7 +526,7 @@
             ball.style.display = 'block';
             msg.innerText = "HERE COMES THE PITCH...";
             pitchInterval = setInterval(() => {
-                ballPos += 5;
+                ballPos += 6;
                 ball.style.top = ballPos + 'px';
                 if(ballPos > 300) {
                     clearInterval(pitchInterval);
@@ -532,15 +536,15 @@
                     document.getElementById('outs').innerText = outs;
                     msg.innerText = "STRIKE! OUT.";
                 }
-            }, 20);
+            }, 16);
         }
 
         function swingBat() {
             if(!ballInFlight) return;
             clearInterval(pitchInterval);
             ballInFlight = false;
-            // Strike zone is between 240px and 280px
-            if(ballPos >= 240 && ballPos <= 280) {
+            // Strike zone is between 230 and 280
+            if(ballPos >= 235 && ballPos <= 275) {
                 runs++;
                 document.getElementById('runs').innerText = runs;
                 msg.innerText = "HOME RUN! GO SNEHA!";
@@ -552,7 +556,6 @@
             ball.style.display = 'none';
         }
 
-        // COUNTDOWN
         function updateCountdown() {
             const target = new Date("January 1, 2028 00:00:00").getTime();
             const now = new Date().getTime();
@@ -561,9 +564,10 @@
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById("cpa-timer").innerText = `${days}d ${hours}h ${mins}m ${secs}s`;
+            document.getElementById("cpa-timer").innerText = `${days}D : ${hours}H : ${mins}M : ${secs}S`;
         }
         setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
