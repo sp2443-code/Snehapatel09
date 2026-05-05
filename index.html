@@ -143,6 +143,7 @@
             color: var(--text-main);
         }
 
+        /* Interactive Projects Styles */
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--accent-gold);
@@ -189,6 +190,7 @@
             display: none;
         }
 
+        /* BIGGER CPA TICKER */
         .cpa-ticker {
             background: #0a0a0a;
             padding: 40px 20px;
@@ -376,24 +378,34 @@
     <section id="projects">
         <h2>Interactive Projects</h2>
         <div class="project-card">
-            <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.8rem;">Liquidity Pulse</h3>
+            <h3 style="font-family: 'Playfair Display', serif; color: var(--accent-gold); font-size: 1.8rem;">Intrinsic Terminal Valuation</h3>
             <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 10px;">
-                An auditing tool designed to assess solvency. Analysis of current assets and liabilities provides an instant snapshot of financial health.
+                Advanced Gordon Growth Model ($GGM$) terminal value engine. Analyzes long-term cash flow sustainability based on cost of capital and terminal growth rates.
             </p>
             <div class="app-input-group">
                 <div>
-                    <label>CURRENT ASSETS ($)</label>
-                    <input type="number" id="assets" placeholder="e.g. 500000">
+                    <label>FINAL YEAR FCF ($)</label>
+                    <input type="number" id="fcf" placeholder="e.g. 100000">
                 </div>
                 <div>
-                    <label>CURRENT LIABILITIES ($)</label>
-                    <input type="number" id="liabilities" placeholder="e.g. 250000">
+                    <label>WACC (%)</label>
+                    <input type="number" id="wacc" placeholder="e.g. 8.5">
+                </div>
+                <div>
+                    <label>TERMINAL GROWTH (%)</label>
+                    <input type="number" id="growth" placeholder="e.g. 2.0">
+                </div>
+                <div>
+                    <label>SHARES OUTSTANDING</label>
+                    <input type="number" id="shares" placeholder="e.g. 50000">
                 </div>
             </div>
-            <button class="calc-btn" onclick="calculateLiquidity()">Analyze Pulse</button>
+            <button class="calc-btn" onclick="calculateValuation()">Execute Valuation Engine</button>
             <div id="result-box">
-                <h4 id="ratio-output" style="font-size: 2.5rem; color: var(--accent-gold); font-family: 'Playfair Display', serif;"></h4>
-                <p id="verdict" style="font-style: italic; margin-top: 10px; color: var(--text-main);"></p>
+                <p style="color: var(--accent-gold); font-size: 0.8rem; letter-spacing: 2px;">ESTIMATED TERMINAL VALUE</p>
+                <h4 id="valuation-output" style="font-size: 2.5rem; color: #fff; font-family: 'Playfair Display', serif; margin: 10px 0;"></h4>
+                <p id="per-share" style="color: var(--accent-gold); font-weight: 600;"></p>
+                <p id="verdict" style="font-style: italic; margin-top: 15px; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid #222; padding-top: 15px;"></p>
             </div>
         </div>
     </section>
@@ -443,16 +455,29 @@
     </footer>
 
     <script>
-        function calculateLiquidity() {
-            const assets = document.getElementById('assets').value;
-            const liabs = document.getElementById('liabilities').value;
+        function calculateValuation() {
+            const fcf = parseFloat(document.getElementById('fcf').value);
+            const wacc = parseFloat(document.getElementById('wacc').value) / 100;
+            const growth = parseFloat(document.getElementById('growth').value) / 100;
+            const shares = parseFloat(document.getElementById('shares').value);
             const resultBox = document.getElementById('result-box');
-            if(assets && liabs && liabs != 0) {
-                const ratio = (assets / liabs).toFixed(2);
+            
+            if(fcf && wacc && growth && shares) {
+                if (growth >= wacc) {
+                    alert("Growth rate cannot be higher than WACC for a stable valuation.");
+                    return;
+                }
+                
+                // Gordon Growth Formula: TV = [FCF * (1 + g)] / (WACC - g)
+                const terminalValue = (fcf * (1 + growth)) / (wacc - growth);
+                const sharePrice = terminalValue / shares;
+                
                 resultBox.style.display = 'block';
-                document.getElementById('ratio-output').innerText = ratio + " : 1";
-                let message = ratio >= 2 ? "Strong Liquidity" : ratio >= 1.2 ? "Stable" : "Risk Warning";
-                document.getElementById('verdict').innerText = message;
+                document.getElementById('valuation-output').innerText = "$" + terminalValue.toLocaleString(undefined, {maximumFractionDigits: 0});
+                document.getElementById('per-share').innerText = "Implied Terminal Price per Share: $" + sharePrice.toFixed(2);
+                
+                let logic = `This analysis assumes a perpetual growth rate of ${(growth*100).toFixed(1)}%. Note: If the WACC increases to ${(wacc*1.1*100).toFixed(1)}%, the valuation sensitivity would trigger a significant downside adjustment.`;
+                document.getElementById('verdict').innerText = logic;
             }
         }
 
